@@ -4,77 +4,56 @@
 	<meta charset="UTF-8">
 	<title>PrAn</title>
 </head>
-
 <body>
-
 	  <script>
-
 	function total(){		
 		alert("Тотал – в букмекерских конторах, это ставка на суммарное количество: голов, очков, геймов, забитых суммарно, или индивидуально каждой из сторон в спортивном соревновании. Информация из Википедии");
 }
-
 	function fora(){		
 		alert("Фора – это предоставление преимущества, выражающегося числом (количеством) мячей, очков, секунд и т. д. Это число может быть целым (мягкая фора) или дробным (жёсткая фора). Фора может быть как отрицательной (на фаворита), так и положительной (на аутсайдера). Информация из Википедии");
 }
-
 	function winn(){		
 		alert("Победа в матче – это победа в поединке с учетом дополнительного времени. Ставки на «победу в матче» с учетом овертайма предполагают полную победу одной из команд над ее соперником независимо от того, когда это произошло. Информация из Википедии");
 }
-
 function multi(){
 	if(document.getElementById("com33").value==""||isNaN(document.getElementById("com33").value))
 	{sum = parseFloat(com11.value) + parseFloat(com22.value);
 		var c1 = parseFloat(com11.value)/(sum/100);
 		var c2 = parseFloat(com22.value)/(sum/100);
 		var c = 0;
-		
-
 if(c1>=c2){
-		c=c1;
-		c1=c2;
-		c2=c;
+		c=c1;c1=c2;c2=c;
 		var win=document.getElementById("com222").value;
 }
 else{
-	c=c2;
-	c2=c1;
-	c1=c;
+	c=c2;c2=c1;c1=c;
 	var win=document.getElementById("com111").value;
 	}
 document.getElementById("com1").value=c1.toFixed(2)+"%";
 document.getElementById("com2").value=c2.toFixed(2)+"%";
 document.getElementById("com3").value=null;
-
 }
-
-
 else{sum = parseFloat(com11.value) + parseFloat(com22.value)+ parseFloat(com33.value);
 	var c = 0;
 		var c1 = parseFloat(com11.value)/(sum/100);
 		var c2 = parseFloat(com22.value)/(sum/100);
 		var c3 = parseFloat(com33.value)/(sum/100);
-
 		if(c2>=c1&&c2>=c3){
 		if(c1>=c3){c=c2; c2=c3; c3 = c;var win="Ничья";}
 			else{c=c2; c2=c1; c1 = c;var win=document.getElementById("com111").value;}
-
 }
-		
 			else if(c1>c2&&c1>=c3){
 			if(c2>=c3){c=c1; c1=c3; c3 = c;var win="Ничья";}
 			else{c=c1; c1=c2; c2 = c;var win=document.getElementById("com222").value;}
-		
 }
 		else if(c3>c1&&c3>c2){
 			if(c1>c2){c=c3; c3=c2; c2 = c;var win=document.getElementById("com222").value;}
 			else{c=c3; c3=c1; c1 = c;var win=document.getElementById("com111").value;}
 }
-
 		document.getElementById("com1").value=c1.toFixed(2)+"%";
 		document.getElementById("com2").value=c2.toFixed(2)+"%";
 		document.getElementById("com3").value=c3.toFixed(2)+"%";
 	}
-
 	if(isNaN(document.getElementById("com11").value)||isNaN(document.getElementById("com22").value)){
 		alert("Ошибка вычисления");
 		document.getElementById("com1").value=null;
@@ -84,8 +63,6 @@ else{sum = parseFloat(com11.value) + parseFloat(com22.value)+ parseFloat(com33.v
 	document.getElementById("res").value=win;
 	}
 </script>
-
-
 	<header class="head">
 		<div href="index.html" class="logo">
 			<span href="index.html">PrAn</span>
@@ -97,17 +74,13 @@ else{sum = parseFloat(com11.value) + parseFloat(com22.value)+ parseFloat(com33.v
 			<input onclick="winn()" href="galery.html" type="button" value="Победа">
 		</div>
 	</header>
-
 	<div class="fix">
 			<div class="content">
-			
 			<h1>Анализ</h1>
-
 			<div>Вероятна победа: 					    	
 				<input id="res" type="text" readonly>
 				<button onclick="multi()"  class="btn btn-primary" >Определить</button>
 			</div>
-				
 			<section class="lists">
 						<table>
 					  <tr>
@@ -155,15 +128,11 @@ else{sum = parseFloat(com11.value) + parseFloat(com22.value)+ parseFloat(com33.v
 					    </td>
 					  </tr>
 					</table>
-				
 			</section>	
 			</div>
 <span style="float: left; bottom: auto; color: #9B8763FF">Мы не гарантируем вам стопроцентный выигрыш. Наш анализ основан на математических вычислениях</span>
 		</div>
-
-
 </div>
-
 <style>
 	body{
 	background: linear-gradient(#FFF, #ADFFF9, #00F9FF, #000046) no-repeat center top;
@@ -257,7 +226,5 @@ h1{
 	font-size: 5vh;
 }
 </style>
-	
 </body>
-
 </html>
