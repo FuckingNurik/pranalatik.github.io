@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>PrAn</title>
+</head>
+
+<body>
+
+	  <script>
+
+	function total(){		
+		alert("Тотал – в букмекерских конторах, это ставка на суммарное количество: голов, очков, геймов, забитых суммарно, или индивидуально каждой из сторон в спортивном соревновании. Информация из Википедии");
+}
+
+	function fora(){		
+		alert("Фора – это предоставление преимущества, выражающегося числом (количеством) мячей, очков, секунд и т. д. Это число может быть целым (мягкая фора) или дробным (жёсткая фора). Фора может быть как отрицательной (на фаворита), так и положительной (на аутсайдера). Информация из Википедии");
+}
+
+	function winn(){		
+		alert("Победа в матче – это победа в поединке с учетом дополнительного времени. Ставки на «победу в матче» с учетом овертайма предполагают полную победу одной из команд над ее соперником независимо от того, когда это произошло. Информация из Википедии");
+}
+
+function multi(){
+	if(document.getElementById("com33").value==""||isNaN(document.getElementById("com33").value))
+	{sum = parseFloat(com11.value) + parseFloat(com22.value);
+		var c1 = parseFloat(com11.value)/(sum/100);
+		var c2 = parseFloat(com22.value)/(sum/100);
+		var c = 0;
+		
+
+if(c1>=c2){
+		c=c1;
+		c1=c2;
+		c2=c;
+		var win=document.getElementById("com222").value;
+}
+else{
+	c=c2;
+	c2=c1;
+	c1=c;
+	var win=document.getElementById("com111").value;
+	}
+document.getElementById("com1").value=c1.toFixed(2)+"%";
+document.getElementById("com2").value=c2.toFixed(2)+"%";
+document.getElementById("com3").value=null;
+
+}
+
+
+else{sum = parseFloat(com11.value) + parseFloat(com22.value)+ parseFloat(com33.value);
+	var c = 0;
+		var c1 = parseFloat(com11.value)/(sum/100);
+		var c2 = parseFloat(com22.value)/(sum/100);
+		var c3 = parseFloat(com33.value)/(sum/100);
+
+		if(c2>=c1&&c2>=c3){
+		if(c1>=c3){c=c2; c2=c3; c3 = c;var win="Ничья";}
+			else{c=c2; c2=c1; c1 = c;var win=document.getElementById("com111").value;}
+
+}
+		
+			else if(c1>c2&&c1>=c3){
+			if(c2>=c3){c=c1; c1=c3; c3 = c;var win="Ничья";}
+			else{c=c1; c1=c2; c2 = c;var win=document.getElementById("com222").value;}
+		
+}
+		else if(c3>c1&&c3>c2){
+			if(c1>c2){c=c3; c3=c2; c2 = c;var win=document.getElementById("com222").value;}
+			else{c=c3; c3=c1; c1 = c;var win=document.getElementById("com111").value;}
+}
+
+		document.getElementById("com1").value=c1.toFixed(2)+"%";
+		document.getElementById("com2").value=c2.toFixed(2)+"%";
+		document.getElementById("com3").value=c3.toFixed(2)+"%";
+	}
+
+	if(isNaN(document.getElementById("com11").value)||isNaN(document.getElementById("com22").value)){
+		alert("Ошибка вычисления");
+		document.getElementById("com1").value=null;
+		document.getElementById("com2").value=null;
+		document.getElementById("com3").value=null;
+	}
+	document.getElementById("res").value=win;
+	}
+</script>
+
+
+	<header class="head">
+		<div href="index.html" class="logo">
+			<span href="index.html">PrAn</span>
+		</div>
+		<span>Спортивный анализатор</span>
+		<div class="menu">
+			<input onclick="total()" href="index.html" type="button" value="Тотал">
+			<input onclick="fora()" href="map.html" type="button" value="Фора">
+			<input onclick="winn()" href="galery.html" type="button" value="Победа">
+		</div>
+	</header>
+
+	<div class="fix">
+			<div class="content">
+			
+			<h1>Анализ</h1>
+
+			<div>Вероятна победа: 					    	
+				<input id="res" type="text" readonly>
+				<button onclick="multi()"  class="btn btn-primary" >Определить</button>
+			</div>
+				
+			<section class="lists">
+						<table>
+					  <tr>
+					    <td></td>
+					    <td>
+					    	Имя
+					    </td>
+					    <td>Коэффициент</td>
+					    <td>
+							Шанс
+					    </td>
+					  </tr>
+					  <tr>
+					    <td>Команда номер 1</td>
+					    <td>
+					    	<input id="com111"type="text" size="40">
+					    </td>
+					    <td>
+					    	<input id="com11" type="text" size="40">
+					    </td>
+					    <td>
+					    	<input id="com1" type="text" readonly>
+					    </td>
+					  </tr>
+					  <tr>
+					    <td>Команда номер 2</td>
+					    <td>
+					    	<input id="com222" type="text" size="40">
+					    </td>
+					    <td>
+					    	<input id="com22" type="text" size="40">
+					    </td>
+					    <td>
+					    	<input id="com2" type="text" readonly>
+					    </td>
+					  </tr>
+					  <tr>
+					    <td>Ничья</td>
+					    <td id="com333" style="border: none;"></td>
+					    <td>
+					    	<input id="com33" type="text" size="40">
+					    </td>
+					    <td>
+					    	<input id="com3" type="text" readonly>
+					    </td>
+					  </tr>
+					</table>
+				
+			</section>	
+			</div>
+<span style="float: left; bottom: auto; color: #9B8763FF">Мы не гарантируем вам стопроцентный выигрыш. Наш анализ основан на математических вычислениях</span>
+		</div>
+
+
+</div>
+
+<style>
+	body{
+	background: linear-gradient(#FFF, #ADFFF9, #00F9FF, #000046) no-repeat center top;
+ 	margin: 0 0;
+ 	background-attachment: fixed;
+}
+.head{
+	height: 10%;
+	background-color: #4EB0A7;
+	display: flex;
+	align-items: center;
+	padding-left: 10vw;
+}
+.head span{
+	font-size: 5vh;
+	margin-left: 3vw;
+    -webkit-user-select: none;
+}
+.logo{
+	align-items: center;
+	display: flex;
+	background: linear-gradient(#F70, #6ADC22, #3BC363, #97FF00) no-repeat center top; 
+	width: 8vh;
+	height: 8vh;
+	border-radius: 5vh;
+}
+.logo span{
+	align-items: center;
+	margin: 0 auto;
+	font-size: 2vh;
+}
+.menu{
+	display: flex;
+    margin-left: 1vw;
+   	background-color: #78B44AFF;
+	align-items: center;
+}
+.menu input{
+	height: 10vh;
+	color: #000;
+	align-items: center;
+	background-color: #78B44AFF;
+	font-size: 3vh;
+	width: 10vw;
+	-moz-box-shadow:0 0 10px #4D2;
+	-webkit-box-shadow:0 0 10px #4D2;
+	box-shadow:0 0 10px #4D2;
+}
+.content{
+	background-color: #fff;
+	float: left;
+	width: 78vw;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+.fix{
+	background-color: #fff;
+	margin-left: 10vw;
+	float: left;
+	width: 78vw;
+	height: 90vh;
+}
+table{
+    margin: 3vh 0;
+    text-align: left;
+    border-collapse: separate;
+    border: 0.3vw solid #ddd;
+    border-spacing: 3vw;
+    border-radius: 1vw;
+    background: #fdfdfd;
+    font-size: 3vh;
+    width: 75vw;
+  }
+  td,th{
+    border: 0.3vw solid #ddd;
+    padding: 1vw;
+    border-radius: 1vw;
+    width: 14vw;
+  }
+  th{
+    background: #E4E4E4;
+  }
+  .lists{    
+  	width: 75vw;
+}
+.lists input{
+	width: 14vw;
+}
+h1{
+	font-size: 5vh;
+}
+</style>
+	
+</body>
+
+</html>
