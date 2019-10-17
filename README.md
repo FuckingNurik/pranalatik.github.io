@@ -1,1 +1,0 @@
-# pranalatik.github.io
